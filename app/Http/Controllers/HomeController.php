@@ -18,7 +18,7 @@ class HomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-        \LaravelFacebookPixel::createEvent('PageView', $parameters = []);
+        // \LaravelFacebookPixel::createEvent('PageView', $parameters = []);
         $slides = Slide::whereIsActive(1)->get();
         $sections = HomeSection::orderBy('order', 'asc')->get();
         return view('index', compact('slides', 'sections'));

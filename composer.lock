@@ -1,10 +1,10 @@
-{
+aws.connect.psdb.cloud{
     "_readme": [
         "This file locks the dependencies of your project to a known state",
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dc53c5c8c6bed08522f82265ec266509",
+    "content-hash": "0c95852c711d62288b2084ea1a1a1f10",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1148,57 +1148,6 @@
                 "source": "https://github.com/guzzle/psr7/tree/1.7.0"
             },
             "time": "2020-09-30T07:37:11+00:00"
-        },
-        {
-            "name": "hotash/laravel-multi-ui",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/bdsumon4u/Laravel-Multi-Ui.git",
-                "reference": "4a6f9b15925b9daceed71debac442aaf1979fea6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/bdsumon4u/Laravel-Multi-Ui/zipball/4a6f9b15925b9daceed71debac442aaf1979fea6",
-                "reference": "4a6f9b15925b9daceed71debac442aaf1979fea6",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/console": "^7.0",
-                "illuminate/filesystem": "^7.0",
-                "illuminate/support": "^7.0",
-                "php": "^7.2.5"
-            },
-            "default-branch": true,
-            "type": "package",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Hotash\\LaravelMultiUi\\UiServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Hotash\\LaravelMultiUi\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Sumon Ahmed",
-                    "email": "bdsumon4u@gmail.com"
-                }
-            ],
-            "description": "Laravel Ui Package For Multiple Guards.",
-            "support": {
-                "issues": "https://github.com/bdsumon4u/Laravel-Multi-Ui/issues",
-                "source": "https://github.com/bdsumon4u/Laravel-Multi-Ui/tree/master"
-            },
-            "time": "2020-06-11T10:18:40+00:00"
         },
         {
             "name": "intervention/image",
@@ -8958,9 +8907,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "hotash/laravel-multi-ui": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
@@ -8968,5 +8915,5 @@
         "ext-json": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }

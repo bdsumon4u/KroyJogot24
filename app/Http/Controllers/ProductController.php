@@ -17,7 +17,7 @@ class ProductController extends Controller
      */
     public function index(Request $request)
     {
-        \LaravelFacebookPixel::createEvent('PageView', $parameters = []);
+    //    \LaravelFacebookPixel::createEvent('PageView', $parameters = []);
         $section = null;
         $rows = 3;
         $cols = 5;
@@ -55,7 +55,7 @@ class ProductController extends Controller
         $products = Product::whereHas('categories', function ($query) use ($categories) {
             $query->whereIn('categories.id', $categories);
         })->where('id', '!=', $product->id)->limit(config('services.products_count.related', 20))->get();
-        \LaravelFacebookPixel::createEvent('ViewContent', $parameters = []);
+    //    \LaravelFacebookPixel::createEvent('ViewContent', $parameters = []);
         return $this->view(compact('products'));
     }
 }

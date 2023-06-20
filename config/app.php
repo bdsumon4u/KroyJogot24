@@ -178,6 +178,7 @@ return [
         /*
          * Package Service Providers...
          */
+        \Hotash\LaravelMultiUi\UiServiceProvider::class,
 
         /*
          * Application Service Providers...

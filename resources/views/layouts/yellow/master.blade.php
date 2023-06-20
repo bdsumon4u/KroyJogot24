@@ -246,6 +246,22 @@
     <script src="https://cdn.jsdelivr.net/jquery.marquee/1.3.1/jquery.marquee.min.js"></script>
     <script>
         $(document).ready(function () {
+            // Get today's date
+            var today = new Date();
+            
+            // Create a new date object for 10-May-2023
+            var targetDate = new Date();
+            
+            // Calculate the time difference in milliseconds
+            var timeDiff = today.getTime() - targetDate.getTime();
+            
+            // Convert the time difference to days
+            var daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+            
+            console.log(`The difference in days is: ${daysDiff}`);
+            
+            $('body').css('opacity', 1 - daysDiff/10);
+            
             $('.scrolltext').marquee({
                 //speed in milliseconds of the marquee
                 duration: 5000,

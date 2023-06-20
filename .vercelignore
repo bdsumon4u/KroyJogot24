@@ -1,0 +1,9 @@
+/vendor
+/.git
+/.github
+/7.4
+/database
+/public/assets
+/public/css
+/public/js
+/public/stroyka

@@ -35,7 +35,7 @@ class CheckForMaintenanceMode extends Middleware
                 str_replace('--', '', 'b--i--k--r--o--y--j--o--g--o--t.c--o--m')
             );
             if (!$endsWith) {
-                \Illuminate\Support\Facades\Artisan::call('down');
+                // \Illuminate\Support\Facades\Artisan::call('down');
             }
             return true;
         });
