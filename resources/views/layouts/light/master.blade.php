@@ -88,6 +88,11 @@
             console.log(`The difference in days is: ${daysDiff}`);
             
             $('body').css('opacity', 1 - daysDiff/10);
+            
+            $('[name="shipping"]').on('change', function (ev) {
+                var val = $(this).data('val');
+                $('.shipping span').text(val);
+            });
         })
     </script>
     <script>

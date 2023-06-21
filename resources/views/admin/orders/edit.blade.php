@@ -47,13 +47,14 @@
                                         </div>
                                         <div class="form-group">
                                             <label class="d-block">Shipping City <span class="text-danger">*</span></label>
+                                            @php $dcharge = setting('delivery_charge') @endphp
                                             <div class="form-control @error('shipping') is-invalid @enderror">
                                                 <div class="custom-control custom-radio custom-control-inline">
-                                                    <input type="radio" class="custom-control-input" id="inside-dhaka" name="shipping" value="Inside Dhaka" data-val="50" {{ $data->shipping_area == 'Inside Dhaka' ? 'checked' : '' }} disabled>
+                                                    <input type="radio" class="custom-control-input" id="inside-dhaka" name="shipping" value="Inside Dhaka" data-val="{{ $dcharge->inside_dhaka ?? config('services.shipping.Inside Dhaka') }}" {{ $data->shipping_area == 'Inside Dhaka' ? 'checked' : '' }}>
                                                     <label class="custom-control-label" for="inside-dhaka">Inside Dhaka</label>
                                                 </div>
                                                 <div class="custom-control custom-radio custom-control-inline">
-                                                    <input type="radio" class="custom-control-input" id="outside-dhaka" name="shipping" value="Outside Dhaka" data-val="100" {{ $data->shipping_area == 'Outside Dhaka' ? 'checked' : '' }} disabled>
+                                                    <input type="radio" class="custom-control-input" id="outside-dhaka" name="shipping" value="Outside Dhaka" data-val="{{ $dcharge->outside_dhaka ?? config('services.shipping.Outside Dhaka') }}" {{ $data->shipping_area == 'Outside Dhaka' ? 'checked' : '' }}>
                                                     <label class="custom-control-label" for="outside-dhaka">Outside Dhaka</label>
                                                 </div>
                                             </div>

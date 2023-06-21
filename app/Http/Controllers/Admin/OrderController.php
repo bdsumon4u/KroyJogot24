@@ -66,17 +66,28 @@ class OrderController extends Controller
             'address' => 'required',
             'note' => 'nullable',
             'status' => 'required',
+            'shipping' => 'required',
             'data.discount' => 'required|integer',
             'data.advanced' => 'required|integer',
         ]);
 
         $data['status_at'] = now()->toDateTimeString();
+        $data['data']['shipping_area'] = $data['shipping'];
+        $data['data']['shipping_cost'] = setting('delivery_charge')->{$data['shipping'] == 'Inside Dhaka' ? 'inside_dhaka' : 'outside_dhaka'} ?? config('services.shipping.'.$data['shipping']);
+        $data['data']['subtotal'] = $this->getSubtotal($order->products);
         if ($order->status != 'Shipping' && $data['status'] == 'Shipping') {
             $order->forceFill(['shipped_at' => now()->toDateTimeString()]);
         }
 
         $order->update($data);
         return redirect(route('admin.orders.show', $order))->withSuccess('Order Has Been Updated.');
+    }
+
+    protected function getSubtotal($products)
+    {
+        return is_array($products) ? array_reduce($products, function ($sum, $product) {
+            return $sum + ((array)$product)['total'];
+        }) : $products->sum('total');
     }
 
     public function reports(Request $request)
