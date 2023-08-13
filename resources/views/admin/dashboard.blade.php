@@ -80,7 +80,7 @@
                   </div>
                </div>
             </div>
-             @foreach($orders as $status => $count)
+            @foreach($orders as $status => $count)
             <div class="col-xl-3 box-col- col-lg-3 col-md-3">
                <div class="card o-hidden">
                   <div class="card-body">
@@ -89,13 +89,14 @@
                             <a href="{{ route('admin.orders.index', array_merge(['status' => in_array($stat = strtolower($status), ['all', 'total']) ? '' : $stat, 'start_d' => date('Y-m-d'), 'end_d' => date('Y-m-d')], request()->query())) }}">
                                 <p class="f-w-500 font-roboto">{{ $status }} Orders</p>
                                 <h4 class="f-w-500 mb-0 f-26"><span class="-counter-">{{ $count }}</span></h4>
+                                <span class="-counter-">Taka: {{ $amounts[$status] }}</span>
                             </a>
                         </div>
                      </div>
                   </div>
                </div>
             </div>
-             @endforeach
+            @endforeach
          </div>
       </div>
       <div class="col-xl-4 xl-50 box-col-12">
