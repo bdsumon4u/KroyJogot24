@@ -43,6 +43,7 @@ class SettingRequest extends FormRequest
 
             'call_for_order' => 'sometimes',
             'scroll_text' => 'sometimes',
+            'pixel_ids' => 'sometimes',
 
             'delivery_charge.inside_dhaka' => 'sometimes|integer',
             'delivery_charge.outside_dhaka' => 'sometimes|integer',
