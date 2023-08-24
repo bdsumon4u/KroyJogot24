@@ -44,15 +44,16 @@ class OrderController extends Controller
 
         return DataTables::of($orders)
             ->addIndexColumn()
-            ->setRowClass(function ($row) {
-                if ($row->data->is_fraud ?? false) {
-                    return 'bg-warning';
-                }
-                if ($row->data->is_repeat ?? false) {
-                    return 'bg-info';
-                }
-                return '';
-            })
+            ->setRowAttr([
+                'style' => function ($row) {
+                    if ($row->data->is_fraud ?? false) {
+                        return 'background: #ff9e9e';
+                    }
+                    if (!($row->data->is_fraud ?? false) && ($row->data->is_repeat ?? false)) {
+                        return 'background: #fffeeaa';
+                    }
+                },
+            ])
             ->addColumn('checkbox', function ($row) {
                 return '<input type="checkbox" name="order_id[]" value="' . $row->id . '">';
             })
