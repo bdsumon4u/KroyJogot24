@@ -93,13 +93,19 @@ class OrderController extends Controller
     public function reports(Request $request)
     {
         $orders = Order::select('id', 'products');
-        if ($request->status) {
+        $date_column = 'status_at';
+        if ($request->status == 'all') {
+            $date_column = 'created_at';
+        } else if ($request->status) {
+            if ($request->status == 'Shipping') {
+                $date_column = 'shipped_at';
+            }
             $orders->where('status', $request->status);
         }
         if ($request->date) {
-            $orders->whereBetween('status_at', [Carbon::parse($request->date)->startOfDay(), Carbon::parse($request->date)->endOfDay()]);
+            $orders->whereBetween($date_column, [Carbon::parse($request->date)->startOfDay(), Carbon::parse($request->date)->endOfDay()]);
         } else {
-            $orders->whereBetween('status_at', [now()->startOfDay(), now()->endOfDay()]);
+            $orders->whereBetween($date_column, [now()->startOfDay(), now()->endOfDay()]);
         }
         if ($request->staff_id) {
             $orders->where('admin_id', $request->staff_id);

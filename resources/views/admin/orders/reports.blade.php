@@ -49,6 +49,7 @@
                             <div class="col-auto">
                                 <select name="status" id="status" class="form-control form-control-sm">
                                     <option value="">Delivery Status</option>
+                                    <option value="all">All Orders</option>
                                     @foreach(config('app.orders', []) as $status)
                                     <option value="{{ $status }}" @if(request()->get('status') == $status) selected @endif>{{ $status }}</option>
                                     @endforeach
