@@ -12,3 +12,6 @@
 <!-- Theme js-->
 <script src="{{asset('assets/js/script.js')}}"></script>
 <!-- Plugin used-->
+<!-- feather icon js-->
+<script src="{{asset('assets/js/icons/feather-icon/feather.min.js')}}"></script>
+<script src="{{asset('assets/js/icons/feather-icon/feather-icon.js')}}"></script>
