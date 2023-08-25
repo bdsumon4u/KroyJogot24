@@ -62,11 +62,11 @@ class CheckoutController extends Controller
                 })->toArray();
 
             $data['products'] = json_encode($products);
-            $oldOrders = Order::select(['id', 'admin_id', 'status'])->where('data->phone', $data['phone'])->get();
+            $oldOrders = Order::select(['id', 'admin_id', 'status'])->where('phone', $data['phone'])->get();
             $adminIds = $oldOrders->pluck('admin_id')->unique()->toArray();
             $adminQ = Admin::where('role_id', 1)->where('is_active', true)->inRandomOrder();
             if (count($adminIds) > 0) {
-                $data['admin_id'] = $adminQ->wheretIn('id', $adminIds)->first()->id ?? $adminQ->first()->id ?? null;
+                $data['admin_id'] = $adminQ->whereIn('id', $adminIds)->first()->id ?? $adminQ->first()->id ?? null;
             } else {
                 $data['admin_id'] = $adminQ->first()->id ?? null;
             }
