@@ -121,7 +121,7 @@
         }
         .mobile-header__search-form .aa-input-search {
             box-shadow: none;
-            border: 2px solid #000000;
+            border: 2px solid crimson;
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
             border-right-width: 1px;
@@ -130,7 +130,7 @@
             background: #f3f3f3;
             color: #ca3d1b;
             fill: #ca3d1b;
-            border: 2px solid #000000;
+            border: 2px solid crimson;
             border-left-width: 1px;
             border-radius: 0 4px 4px 0;
         }

@@ -3109,7 +3109,7 @@ html[dir="rtl"] .account-menu__user-avatar {
 .departments__button {
     text-align: left;
     border: none;
-    background: #c9151b;
+    background: crimson;
     color: inherit;
     font-size: 15px;
     position: relative;
@@ -3630,7 +3630,7 @@ html[dir="rtl"] .account-menu__user-avatar {
     height: 91px;
 }
 .mobile-header__panel {
-    background: white;
+    background: crimson;
     box-shadow: 0 1px rgba(0, 0, 0, 0.04), inset 0 -1px rgba(0, 0, 0, 0.04);
     color: #444;
     position: relative;
@@ -4357,7 +4357,7 @@ html[dir="rtl"] .account-menu__user-avatar {
 .site-header {
     position: relative;
     z-index: 100;
-    background: white;
+    background: crimson;
     color: inherit;
 }
 .site-header__middle {
