@@ -179,17 +179,6 @@
                 z-index: 9999;
             }
         }
-
-        .departments {
-            width: 205px;
-        }
-        .departments__body {
-            display: none;
-            width: 205px;
-        }
-        .departments:hover .departments__body {
-            display: block;
-        }
     </style>
     @stack('styles')
 </head>
