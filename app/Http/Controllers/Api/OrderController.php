@@ -25,7 +25,7 @@ class OrderController extends Controller
         $end = $_end->format('Y-m-d');
 
 //        dd(Order::query()->first());
-        $orders = Order::when($request->has('status'), function ($query) {
+        $orders = Order::with('admin')->when($request->has('status'), function ($query) {
             $query->where('status', 'like', \request('status'));
         })
             ->when($request->role_id == 1, function ($query) {
@@ -65,6 +65,9 @@ class OrderController extends Controller
             })
             ->editColumn('price', function ($row) {
                 return ($row->data->subtotal ?? 0) + ($row->data->shipping_cost ?? 0);
+            })
+            ->editColumn('admin_id', function ($row) {
+                return $row->admin->name ?? 'N/A';
             })
             ->addColumn('actions', function (Order $order) {
                 return '<div class="d-flex justify-content-center">

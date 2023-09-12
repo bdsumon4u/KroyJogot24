@@ -63,6 +63,7 @@
                                     <th style="min-width: 250px;">Address</th>
                                     <th width="10">Price</th>
                                     <th width="10">Status</th>
+                                    <th width="10">Staff</th>
                                     <th width="10" class="text-center">Action</th>
                                 </tr>
                             </thead>
@@ -155,6 +156,7 @@
             { data: 'address', name: 'address' },
             { data: 'price', name: 'price' },
             { data: 'status', name: 'status' },
+            { data: 'admin_id', name: 'admin_id' },
             { data: 'actions', name: 'actions' },
         ],
         initComplete: function () {

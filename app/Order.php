@@ -10,6 +10,11 @@ class Order extends Model
         'admin_id', 'user_id', 'name', 'phone', 'email', 'address', 'status', 'status_at', 'products', 'note', 'data',
     ];
 
+    public function admin()
+    {
+        return $this->belongsTo(Admin::class);
+    }
+
     public function getProductsAttribute($products)
     {
         return json_decode($products);
