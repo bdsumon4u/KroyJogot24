@@ -89,7 +89,7 @@
 @section('content')
     <div class="">
         <div class="container pt-2">
-            <p class="product__name mb-2" style="font-size: 88%; line-height: 1.25;">{{ $product->name }}</p>
+            <p class="product__name mb-2" style="font-size: 24px; font-weight: bold; line-height: 1.25;">{{ $product->name }}</p>
 
             <div class="product product--layout--standard" data-layout="standard">
                 <div class="product__content" data-id="{{ $product->id }}" data-max="{{ $product->should_track ? $product->stock_count : -1 }}">
