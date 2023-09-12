@@ -16,3 +16,5 @@
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/responsive.css')}}">
 <!-- Feather icon-->
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/feather-icon.css')}}">
+
+<link rel="stylesheet" type="text/css" href="{{asset('assets/css/themify.css')}}">
