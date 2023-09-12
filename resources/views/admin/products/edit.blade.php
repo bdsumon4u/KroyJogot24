@@ -176,6 +176,7 @@
                                                 <div class="col-sm-12">
                                                     <div class="form-group">
                                                         <div class="custom-control custom-checkbox">
+                                                            <input type="hidden" name="should_track" value="0">
                                                             <x-checkbox name="should_track" value="1" :checked="$product->should_track" class="custom-control-input" />
                                                             <x-label for="should_track" class="custom-control-label" />
                                                             <x-error field="should_track" />
