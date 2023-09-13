@@ -136,7 +136,7 @@
                 type: 'num',
                 orderable: false,
                 searchable: false,
-                targets: -3
+                targets: -4
             },
             {
                 orderable: false,
